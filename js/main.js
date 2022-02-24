@@ -21,4 +21,56 @@
 * http://www.omdbapi.com/?apikey=[yourkey]&s=star trek&type=series
 *
 */
-let url = 'https://www.omdbapi.com/?apikey=480593d7&s=marvel&type=movie';
+/* let url = 'https://www.omdbapi.com/?apikey=480593d7&s=marvel&type=movie'; */
+
+/* PSEUDOKOD
+* Fyll i marvel film.
+* Url kopplat till när man fyller i input. 
+* Olika filmer visas som förslag, en lista, under tiden man skriver in film. 
+* Välj vilken typ: movie, episode, serie. Visas som lista som rullgardin. 
+* Vid ej hittat någon film - felmeddelande: Sorry can´t find the movie. Try again!
+
+
+
+*/
+
+let input = document.getElementById('input');
+ let typeBtn = document.getElementById('typeBtn');
+
+ input.addEventListener('click', function() {
+    let url= ('https://www.omdbapi.com/?apikey=480593d7&s=marvel&type=movie' + input.value) 
+   
+    fetch (url)
+    .then(response => response.text())      
+    /* .then(data => {
+       tableBody.innerHTML +=  `
+         <tr>
+				<td>${input.value}</td>
+				<td>${data}</td>
+		   </tr>
+       `
+       
+      })  */
+   
+    .catch((error) => {console.log (error);})   
+   
+ })
+
+ typeBtn.addEventListener('click', function() {
+    let url= ('https://www.omdbapi.com/?apikey=480593d7&s=marvel&type=movie' + input.value) 
+   
+    fetch (url)
+    .then(response => response.text())      
+    /* .then(data => {
+       tableBody.innerHTML +=  `
+         <tr>
+				<td>${input.value}</td>
+				<td>${data}</td>
+		   </tr>
+       `
+       
+      })  */
+   
+    .catch((error) => {console.log (error);})   
+   
+ })

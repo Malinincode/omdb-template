@@ -21,4 +21,4 @@
 * http://www.omdbapi.com/?apikey=[yourkey]&s=star trek&type=series
 *
 */
-let url = 'https://www.omdbapi.com/?apikey=480593d7&s=marvel&t=movie';
+let url = 'https://www.omdbapi.com/?apikey=480593d7&s=marvel&type=movie';

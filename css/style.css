@@ -29,6 +29,17 @@
   align-items: center;
   margin-right: 200px;
   margin-top: 10px;
+  padding-inline: 40px;
  
+}
+
+#input {
+  font-size: 14px; 
+  font-family: 'Architects Daughter', cursive;
+}
+#type {
+  margin-left: 25px;
+  font-size: 14px; 
+  font-family: 'Architects Daughter', cursive;
 }
 

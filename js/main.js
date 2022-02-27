@@ -33,36 +33,26 @@
 
 
 */
+let movieInput = document.getElementById('input');
+movieName = movieInput.value;
+/* input.value = e.target.value; */
+console.log(movieName)
+const data = async() => {
 
-/* let number = 1;
+const response = await fetch(`https://www.omdbapi.com/?apikey=480593d7&s=${movieName}`);
+const movieData = await response.json();
+console.log(movieData);
 
-document.getElementById("preBtn").addEventListener("click", function() {
+} 
+data();
 
-  if(number >= 0) {
-      number--;
-      if(number == -1) {
-        number = 4;
-      }
-      fetch(`http://codexplained.se/animals.php?animal=${number}`)
-      .then(response => response.text())
 
-      .then(data => {
-          let splitData = data.split("*");
 
-          let content = document.getElementById("content");
-          content.innerHTML = `
-          <h1>${splitData[0]}</h1>
-          <i>${splitData[1]}</i>
-          <p>${splitData[2]}</p>
-          <img src="${splitData[3]}">
-          `;
 
-      })
 
-  }
 
-})
- */
+
+
 
 
 
@@ -72,12 +62,14 @@ document.getElementById("preBtn").addEventListener("click", function() {
 
 /* 
 async function fetchInput() {
+
     try {
         let response = await fetch('https://www.omdbapi.com/?apikey=480593d7&s=marvel&type=movie');
-        console.log(response);
+        console.log(response.json());
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
+        
         }
 
         let data     = await response.text();
@@ -87,10 +79,11 @@ async function fetchInput() {
         document.getElementById('text').innerHTML = 'Opps, got some problems with the server. Please try again later';
     } finally {
         console.log("The finally-block is used when something is needed to be done regardless of the outcome")
-    }
+    } 
 }
 
-fetchInput();  */
+fetchInput();   
+ */
 
 
 
@@ -98,8 +91,7 @@ fetchInput();  */
 
 
 
-
-let text = document.getElementById('text');
+/* let text = document.getElementById('text');
 let input = document.getElementById('input')
 
 console.log(text);
@@ -120,9 +112,7 @@ async function fetchData(e) {
             throw new Error('Ops! I can´t find your movie, try again!');
         }
         const data = await response.json();
-     /*    console.log(subject);
-        console.log(data[subject]);
- */
+   
         let HTMLContent = '';
         
         if (subject === 'movie') {
@@ -151,7 +141,7 @@ async function fetchData(e) {
     }
 }
    
-
+ */
 
 
 

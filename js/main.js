@@ -99,7 +99,7 @@ fetchInput();  */
 
 
 
-let text = document.querySelectorAll('text');
+let text = document.getElementById('text');
 let input = document.getElementById('input')
 
 console.log(text);

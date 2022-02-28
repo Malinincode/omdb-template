@@ -33,20 +33,21 @@
 
 
 */
-let movieInput = document.getElementById('input');
-movieName = movieInput.value;
-/* input.value = e.target.value; */
-console.log(movieName)
-const data = async() => {
 
-const response = await fetch(`https://www.omdbapi.com/?apikey=480593d7&s=${movieName}`);
-const movieData = await response.json();
-console.log(movieData);
+
+
+let movieName = document.getElementById('input').value;                           
+console.log(movieName)
+
+const data = async() => {
+    const response = await fetch(`https://www.omdbapi.com/?apikey=480593d7&s=${movieName}`);
+    const movieData = await response.json();
+    console.log(movieData);
 
 } 
 data();
 
-
+ 
 
 
 

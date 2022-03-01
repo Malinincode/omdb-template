@@ -23,7 +23,7 @@
   
 }
 
-#section-movie {
+#input-section {
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -43,3 +43,7 @@
   font-family: 'Architects Daughter', cursive;
 }
 
+#movie-section {
+  color: white;
+ 
+}

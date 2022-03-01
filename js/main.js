@@ -36,18 +36,47 @@
 
 
 
-let movieName = document.getElementById('input').value;                           
-console.log(movieName)
-
 const data = async() => {
-    const response = await fetch(`https://www.omdbapi.com/?apikey=480593d7&s=${movieName}`);
+    const response = await fetch(`https://www.omdbapi.com/?apikey=480593d7&s=marvel`);
     const movieData = await response.json();
     console.log(movieData);
-
+    movieOutput(movieData)
+    
 } 
 data();
 
  
+const movieOutput = (data) => {
+console.log(data);
+console.log(data.Search[0].Title);
+for(let movie of data.Search) {
+    console.log(movie);
+    let movieDiv = document.createElement("div");
+    let movieHeader = document.createElement("h3");
+    let movieImg = document.createElement("img");
+
+    document.getElementById("movie-section").append(movieDiv);
+    movieDiv.append(movieHeader);
+    movieHeader.append(movie.Title);
+     movieImg.src = movie.Poster;
+     movieDiv.append(movieImg);
+     
+    let movieLink = document.createElement("a");
+    movieLink.href = `https://www.imdb.com/title/${movie.imdbID}`;
+    movieLink.target = "_blank";
+    movieDiv.append(movieLink);
+    movieLink.append("Click to go to imdb")
+}
+
+}
+
+document.addEventListener(`input`, function(){
+
+console.log("aöflk");
+
+}) 
+
+
 
 
 

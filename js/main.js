@@ -36,14 +36,14 @@
 
 
 
-const data = async() => {
-    const response = await fetch(`https://www.omdbapi.com/?apikey=480593d7&s=marvel`);
+const data = async(search) => {
+    const response = await fetch(`https://www.omdbapi.com/?apikey=480593d7&type=movie&s=marvel+${search}`);
     const movieData = await response.json();
     console.log(movieData);
     movieOutput(movieData)
     
 } 
-data();
+data("marvel");
 
  
 const movieOutput = (data) => {
@@ -70,10 +70,9 @@ for(let movie of data.Search) {
 
 }
 
-document.addEventListener(`input`, function(){
-
+document.addEventListener(`input`, function(e){
 console.log("aöflk");
-
+data(e.target.value)
 }) 
 
 
